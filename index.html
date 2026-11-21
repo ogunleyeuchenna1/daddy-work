@@ -1,0 +1,1956 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BaCKY // Licensed Electrical Contractor • Ado-Ekiti, Nigeria</title>
+  <meta name="description" content="BaCKY is an elite licensed electrical engineering and contracting firm headquartered in Ado-Ekiti, Ekiti State, Nigeria. NEMSA & COREN compliant electrical engineering.">
+
+  <!-- Typography: Plus Jakarta Sans / Outfit style clean modern sans + JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       MODERN CLEAN CONTRACTOR DESIGN SYSTEM (DRIBBBLE VOLTIX STYLE)
+       - Light modern canvas: #FBFBFA / #F4F4F1
+       - Warm clean cards: #FFFFFF / #F8F8F5 / #F3F1EC
+       - Deep ink text: #111317 / #3B3F49 / #646A78
+       - Accent pop: #FACC15 (Solar Yellow) & #E8590C (Safety Orange)
+       - Dark theme contrast sections: #0F1115
+       - Rounded corners: 16px - 28px
+       - Elegant hairline borders: 1px solid #EAE8E2
+       - Typography: Crisp modern geometric sans + subtle mono specs
+       ========================================================================== */
+    :root {
+      --bg-page: #FBFBFA;
+      --bg-card: #FFFFFF;
+      --bg-surface: #F3F1EC;
+      --bg-surface-soft: #F8F7F3;
+      --bg-dark: #0D0F12;
+      --bg-dark-card: #15181E;
+
+      --text-main: #111317;
+      --text-body: #454A54;
+      --text-muted: #737A88;
+      --text-light: #F4F3EF;
+
+      --accent-yellow: #FACC15;
+      --accent-orange: #EA580C;
+      --accent-pill-bg: #FEF9C3;
+      --accent-pill-text: #854D0E;
+      --accent-warm-bg: #FEF3C7;
+
+      --border-light: #E7E5DF;
+      --border-dark: #22262E;
+
+      --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --radius-xl: 32px;
+      --radius-pill: 9999px;
+
+      --shadow-subtle: 0 4px 20px rgba(0, 0, 0, 0.04);
+      --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.06);
+      --shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.09);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      font-family: var(--font-main);
+      font-size: 16px;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Container Utilities */
+    .container {
+      width: 100%;
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 24px;
+      box-sizing: border-box;
+    }
+    .container-wide {
+      width: 100%;
+      max-width: 1360px;
+      margin: 0 auto;
+      padding: 0 24px;
+      box-sizing: border-box;
+    }
+
+    @media (max-width: 768px) {
+      .container, .container-wide {
+        padding: 0 12px;
+      }
+      .navbar-inner {
+        height: 60px;
+        gap: 6px;
+      }
+      .brand-logo {
+        font-size: 1.35rem;
+      }
+      .btn-quote {
+        font-size: 0.75rem;
+        padding: 7px 10px;
+        gap: 4px;
+      }
+      .mobile-menu-btn {
+        padding: 6px 9px;
+        font-size: 0.72rem;
+        flex-shrink: 0;
+      }
+      .nav-cta-wrap {
+        gap: 6px;
+        flex-shrink: 0;
+      }
+    }
+
+
+
+    /* ==========================================================================
+       CLEAN MAIN NAVBAR
+       ========================================================================== */
+    .navbar {
+      background-color: #FFFFFF;
+      border-bottom: 1px solid var(--border-light);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      transition: box-shadow 0.2s ease;
+    }
+    .navbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 76px;
+      gap: 24px;
+    }
+    .brand-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .brand-logo {
+      font-size: 1.85rem;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      color: var(--text-main);
+      line-height: 1;
+    }
+    .brand-logo span {
+      color: var(--accent-orange);
+    }
+    .brand-tag {
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+      border-left: 1px solid var(--border-light);
+      padding-left: 12px;
+      display: none;
+      line-height: 1.2;
+    }
+    @media (min-width: 640px) {
+      .brand-tag { display: block; }
+    }
+
+    .nav-menu {
+      display: none;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+    @media (min-width: 992px) {
+      .nav-menu { display: flex; }
+    }
+    .nav-item a {
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--text-body);
+      transition: color 0.15s ease;
+      position: relative;
+      padding: 6px 0;
+    }
+    .nav-item a:hover {
+      color: var(--text-main);
+    }
+    .nav-item a.active {
+      color: var(--text-main);
+    }
+    .nav-item a.active::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background-color: var(--text-main);
+      border-radius: 2px;
+    }
+
+    .nav-cta-wrap {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .btn-quote {
+      font-family: var(--font-main);
+      font-size: 0.875rem;
+      font-weight: 700;
+      background-color: #111317;
+      color: #FFFFFF;
+      padding: 12px 22px;
+      border-radius: var(--radius-pill);
+      border: 1px solid #111317;
+      transition: all 0.2s ease;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+    }
+    .btn-quote:hover {
+      background-color: var(--accent-orange);
+      border-color: var(--accent-orange);
+      transform: translateY(-1px);
+    }
+
+    /* Mobile toggle */
+    .mobile-menu-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-light);
+      padding: 8px 14px;
+      border-radius: var(--radius-pill);
+      font-size: 0.8125rem;
+      font-weight: 700;
+      color: var(--text-main);
+      cursor: pointer;
+    }
+    @media (min-width: 992px) {
+      .mobile-menu-btn { display: none; }
+    }
+
+    /* Responsive Mobile Navbar Overrides */
+    @media (max-width: 768px) {
+      .container, .container-wide {
+        padding: 0 12px !important;
+      }
+      .navbar-inner {
+        height: 60px !important;
+        gap: 6px !important;
+      }
+      .brand-logo {
+        font-size: 1.35rem !important;
+      }
+      .brand-tag {
+        display: none !important;
+      }
+      .nav-cta-wrap {
+        gap: 6px !important;
+        flex-shrink: 0 !important;
+      }
+      .btn-quote {
+        font-size: 0.75rem !important;
+        padding: 7px 11px !important;
+        gap: 4px !important;
+      }
+      .mobile-menu-btn {
+        padding: 6px 10px !important;
+        font-size: 0.75rem !important;
+        flex-shrink: 0 !important;
+      }
+    }
+      color: var(--text-main);
+      cursor: pointer;
+    }
+    @media (min-width: 992px) {
+      .mobile-menu-btn { display: none; }
+    }
+    .mobile-drawer {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background-color: #FFFFFF;
+      border-bottom: 1px solid var(--border-light);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+      flex-direction: column;
+      padding: 20px 24px;
+      gap: 14px;
+      z-index: 99;
+    }
+    .mobile-drawer.open {
+      display: flex;
+    }
+    .mobile-drawer a {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-main);
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    /* ==========================================================================
+       SECTION 01: HERO SECTION (VOLTIX SPLIT CLEAN STYLE)
+       ========================================================================== */
+    .hero-section {
+      padding: 56px 0 72px;
+      background-color: var(--bg-page);
+    }
+    .hero-top-row {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 28px;
+      align-items: flex-end;
+      margin-bottom: 40px;
+    }
+    @media (min-width: 900px) {
+      .hero-top-row {
+        grid-template-columns: 1.35fr 0.85fr;
+      }
+    }
+    .hero-headline {
+      font-size: clamp(2.75rem, 5.5vw, 4.5rem);
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+      color: var(--text-main);
+    }
+    .hero-headline span {
+      display: block;
+    }
+    .hero-top-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .hero-lead-text {
+      font-size: 1.0625rem;
+      line-height: 1.6;
+      color: var(--text-body);
+    }
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .btn-pill-action {
+      background-color: var(--accent-yellow);
+      color: #111317;
+      font-size: 0.9375rem;
+      font-weight: 700;
+      padding: 13px 26px;
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--accent-yellow);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+    .btn-pill-action:hover {
+      background-color: #EAB308;
+      border-color: #EAB308;
+      transform: translateY(-1px);
+    }
+    .btn-pill-secondary {
+      background-color: #FFFFFF;
+      color: var(--text-main);
+      font-size: 0.9375rem;
+      font-weight: 600;
+      padding: 13px 24px;
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--border-light);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+    }
+    .btn-pill-secondary:hover {
+      border-color: var(--text-main);
+      background-color: #F8F7F3;
+    }
+
+    /* Main Hero Split Visual Block */
+    .hero-visual-card {
+      background-color: #FFFFFF;
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr;
+      box-shadow: var(--shadow-card);
+      position: relative;
+    }
+    @media (min-width: 992px) {
+      .hero-visual-card {
+        grid-template-columns: 1.3fr 0.9fr;
+      }
+    }
+    .hero-main-img-box {
+      position: relative;
+      overflow: hidden;
+      min-height: 420px;
+    }
+    .hero-main-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+    .hero-visual-card:hover .hero-main-img {
+      transform: scale(1.02);
+    }
+
+    /* Floating Badge on Main Hero Image (Like "15+ Yrs" in Dribbble reference) */
+    .hero-float-badge {
+      position: absolute;
+      top: 24px;
+      left: 24px;
+      background-color: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(8px);
+      border: 1px solid #FFFFFF;
+      padding: 16px 20px;
+      border-radius: var(--radius-lg);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+      max-width: 220px;
+    }
+    .float-num {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: var(--text-main);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .float-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .float-pill {
+      margin-top: 8px;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: #854D0E;
+      background-color: #FEF9C3;
+      padding: 3px 8px;
+      border-radius: var(--radius-pill);
+    }
+
+    /* Right Side Details inside Hero Card */
+    .hero-card-details {
+      padding: clamp(28px, 4vw, 44px);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background-color: #FFFFFF;
+      border-top: 1px solid var(--border-light);
+    }
+    @media (min-width: 992px) {
+      .hero-card-details {
+        border-top: none;
+        border-left: 1px solid var(--border-light);
+      }
+    }
+    .hero-badge-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent-orange);
+      background-color: #FFF7ED;
+      padding: 6px 12px;
+      border-radius: var(--radius-pill);
+      margin-bottom: 20px;
+      align-self: flex-start;
+    }
+    .hero-card-title {
+      font-size: 1.65rem;
+      font-weight: 800;
+      line-height: 1.2;
+      color: var(--text-main);
+      margin-bottom: 14px;
+      letter-spacing: -0.02em;
+    }
+    .hero-card-body {
+      font-size: 0.9375rem;
+      line-height: 1.65;
+      color: var(--text-body);
+      margin-bottom: 28px;
+    }
+    .hero-feature-pills {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+    .feature-pill-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--text-main);
+      background-color: var(--bg-surface-soft);
+      padding: 10px 14px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-light);
+    }
+    .feature-pill-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: var(--accent-orange);
+      flex-shrink: 0;
+    }
+
+    /* ==========================================================================
+       SECTION 02: VALUE PROPOSITION (VOLTIX "ELECTRICIANS FIRST" STYLE)
+       ========================================================================== */
+    .value-section {
+      padding: 80px 0;
+      background-color: var(--bg-surface);
+      border-top: 1px solid var(--border-light);
+      border-bottom: 1px solid var(--border-light);
+    }
+    .value-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+    @media (min-width: 900px) {
+      .value-grid {
+        grid-template-columns: 1fr 1.15fr;
+      }
+    }
+    .value-left-col {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .value-tag {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .value-heading {
+      font-size: clamp(2.2rem, 4vw, 3.25rem);
+      font-weight: 800;
+      line-height: 1.12;
+      letter-spacing: -0.03em;
+      color: var(--text-main);
+    }
+    .value-text {
+      font-size: 1.0625rem;
+      line-height: 1.65;
+      color: var(--text-body);
+    }
+
+    /* Metrics Grid */
+    .metrics-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 10px;
+    }
+    @media (max-width: 600px) {
+      .metrics-row {
+        grid-template-columns: 1fr;
+      }
+    }
+    .metric-card {
+      background-color: #FFFFFF;
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-lg);
+      padding: 24px 20px;
+      box-shadow: var(--shadow-subtle);
+    }
+    .metric-num {
+      font-size: 2.25rem;
+      font-weight: 800;
+      color: var(--text-main);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .metric-title {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    /* The Crew Visual Card inside Value Section */
+    .crew-feature-card {
+      background-color: #FFFFFF;
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+    }
+    .crew-img-wrap {
+      height: 360px;
+      overflow: hidden;
+      position: relative;
+    }
+    .crew-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
+      transition: transform 0.5s ease;
+    }
+    .crew-feature-card:hover .crew-img-wrap img {
+      transform: scale(1.03);
+    }
+    .crew-card-body {
+      padding: 28px;
+    }
+    .crew-role-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent-orange);
+      margin-bottom: 6px;
+    }
+    .crew-title {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 8px;
+    }
+    .crew-desc {
+      font-size: 0.9375rem;
+      color: var(--text-body);
+      line-height: 1.55;
+    }
+
+    /* ==========================================================================
+       SECTION 03: COMPLETE ELECTRICAL SOLUTIONS (3-CARD GRID IN VOLTIX STYLE)
+       06_Industrial_Distribution_Panel_Lead_Engineer.jpg
+       08_Service_Pole_Young_Electrician.jpg
+       04_Solar_Panel_Installation.jpg
+       05_Smart_Home_Lighting.jpg
+       ========================================================================== */
+    .services-section {
+      padding: 96px 0;
+      background-color: var(--bg-page);
+    }
+    .section-head {
+      margin-bottom: 48px;
+    }
+    .section-eyebrow {
+      font-size: 0.8125rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent-orange);
+      margin-bottom: 8px;
+    }
+    .section-title {
+      font-size: clamp(2.2rem, 4vw, 3.25rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--text-main);
+      line-height: 1.15;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+    @media (min-width: 1100px) {
+      .services-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+    .service-card-item {
+      background-color: #FFFFFF;
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--shadow-subtle);
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    .service-card-item:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+      border-color: #D6D2C4;
+    }
+    .service-media {
+      height: 240px;
+      overflow: hidden;
+      position: relative;
+    }
+    .service-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    .service-card-item:hover .service-media img {
+      transform: scale(1.05);
+    }
+    .service-pill-tag {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      background-color: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(4px);
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--text-main);
+      padding: 5px 10px;
+      border-radius: var(--radius-pill);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    }
+    .service-content {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex-grow: 1;
+    }
+    .service-index {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--accent-orange);
+      margin-bottom: 8px;
+    }
+    .service-item-title {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--text-main);
+      line-height: 1.25;
+      margin-bottom: 10px;
+      letter-spacing: -0.01em;
+    }
+    .service-item-text {
+      font-size: 0.875rem;
+      line-height: 1.55;
+      color: var(--text-body);
+      margin-bottom: 20px;
+    }
+    .service-link-btn {
+      font-size: 0.8125rem;
+      font-weight: 700;
+      color: var(--text-main);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.15s ease;
+    }
+    .service-link-btn:hover {
+      color: var(--accent-orange);
+    }
+
+    /* ==========================================================================
+       SECTION 04: "FOUR THINGS EVERY CLIENT GETS" (DRIBBBLE VOLTIX STYLE)
+       Stacked pill cards with clean badge highlights
+       ========================================================================== */
+    .promises-section {
+      padding: 96px 0;
+      background-color: var(--bg-surface);
+      border-top: 1px solid var(--border-light);
+      border-bottom: 1px solid var(--border-light);
+    }
+    .promises-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+    @media (min-width: 992px) {
+      .promises-grid {
+        grid-template-columns: 1fr 1.25fr;
+      }
+    }
+    .promises-left-content {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .promises-tag {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent-orange);
+    }
+    .promises-headline {
+      font-size: clamp(2.2rem, 4vw, 3.25rem);
+      font-weight: 800;
+      line-height: 1.15;
+      color: var(--text-main);
+      letter-spacing: -0.03em;
+    }
+    .promises-body {
+      font-size: 1.0625rem;
+      line-height: 1.6;
+      color: var(--text-body);
+    }
+
+    /* Stacked Pill Cards */
+    .promise-cards-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .promise-pill-card {
+      background-color: #FFFFFF;
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-lg);
+      padding: 22px 26px;
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      box-shadow: var(--shadow-subtle);
+      transition: all 0.2s ease;
+    }
+    .promise-pill-card:hover {
+      transform: translateX(4px);
+      box-shadow: var(--shadow-card);
+      border-color: #D6D2C4;
+    }
+    .promise-badge-pill {
+      background-color: #FEF3C7;
+      color: #92400E;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding: 6px 14px;
+      border-radius: var(--radius-pill);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .promise-badge-pill.orange {
+      background-color: #FFEDD5;
+      color: #9A3412;
+    }
+    .promise-info {
+      flex-grow: 1;
+    }
+    .promise-title {
+      font-size: 1.125rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 4px;
+    }
+    .promise-text {
+      font-size: 0.875rem;
+      color: var(--text-body);
+      line-height: 1.5;
+    }
+
+    /* ==========================================================================
+       SECTION 05: INTERACTIVE PROJECT ESTIMATOR (CLEAN VOLTIX CALCULATOR)
+       ========================================================================== */
+    .estimator-section {
+      padding: 96px 0;
+      background-color: var(--bg-page);
+    }
+    .estimator-card {
+      background-color: #FFFFFF;
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-card);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    @media (min-width: 992px) {
+      .estimator-card {
+        grid-template-columns: 1.25fr 0.85fr;
+      }
+    }
+    .estimator-left-pane {
+      padding: clamp(20px, 4vw, 48px);
+      width: 100%;
+      box-sizing: border-box;
+      min-width: 0;
+    }
+    .estimator-right-pane {
+      background-color: #F8F7F3;
+      border-top: 1px solid var(--border-light);
+      padding: clamp(20px, 4vw, 48px);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 100%;
+      box-sizing: border-box;
+      min-width: 0;
+    }
+    @media (min-width: 992px) {
+      .estimator-right-pane {
+        border-top: none;
+        border-left: 1px solid var(--border-light);
+      }
+    }
+
+    .calc-step-label {
+      font-size: 0.8125rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .calc-options-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+      margin-bottom: 32px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    @media (max-width: 600px) {
+      .calc-options-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .calc-option-btn {
+      background-color: #FFFFFF;
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-align: left;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .calc-option-btn:hover {
+      border-color: #B8B3A4;
+    }
+    .calc-option-btn.active {
+      border-color: #111317;
+      background-color: #111317;
+      color: #FFFFFF;
+    }
+    .calc-option-btn.active .opt-desc {
+      color: #B5B9C2;
+    }
+    .opt-title {
+      font-size: 0.9375rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .opt-desc {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    /* Range slider */
+    .slider-box {
+      background-color: #FFFFFF;
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-md);
+      padding: 20px;
+    }
+    .slider-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+    }
+    .slider-val-tag {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--text-main);
+    }
+    input[type=range] {
+      width: 100%;
+      height: 6px;
+      border-radius: 4px;
+      background: #E5E3DC;
+      outline: none;
+      -webkit-appearance: none;
+    }
+    input[type=range]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--text-main);
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Right Summary Card */
+    .summary-box {
+      background-color: #FFFFFF;
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+    .sum-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+    .sum-amount {
+      font-size: clamp(2.2rem, 3.5vw, 3rem);
+      font-weight: 800;
+      color: var(--text-main);
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+    .sum-note {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+    .breakdown-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8125rem;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border-light);
+      color: var(--text-body);
+    }
+    .breakdown-row:last-child {
+      border-bottom: none;
+    }
+    .breakdown-row b {
+      color: var(--text-main);
+    }
+
+    /* ==========================================================================
+       SECTION 06: TRUSTED CLIENT REVIEWS (DRIBBBLE TESTIMONIAL CARDS)
+       ========================================================================== */
+    .reviews-section {
+      padding: 96px 0;
+      background-color: var(--bg-surface);
+      border-top: 1px solid var(--border-light);
+    }
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+    .review-card {
+      background-color: #FFFFFF;
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      box-shadow: var(--shadow-subtle);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .review-stars {
+      color: var(--accent-yellow);
+      font-size: 1rem;
+      margin-bottom: 14px;
+      letter-spacing: 2px;
+    }
+    .review-quote {
+      font-size: 0.9375rem;
+      line-height: 1.6;
+      color: var(--text-body);
+      margin-bottom: 20px;
+      font-style: italic;
+    }
+    .reviewer-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-top: 1px solid var(--border-light);
+      padding-top: 16px;
+    }
+    .reviewer-avatar-placeholder {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: #E7E5DF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.875rem;
+      color: var(--text-main);
+    }
+    .reviewer-name {
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+    .reviewer-loc {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    /* ==========================================================================
+       CLEAN MODERN FOOTER
+       ========================================================================== */
+    .site-footer {
+      background-color: #111317;
+      color: #FFFFFF;
+      padding: 80px 0 36px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 48px;
+      margin-bottom: 64px;
+    }
+    @media (min-width: 900px) {
+      .footer-grid {
+        grid-template-columns: 1.3fr 0.9fr 0.8fr;
+      }
+    }
+    .footer-brand-title {
+      font-size: 2.2rem;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      margin-bottom: 12px;
+    }
+    .footer-brand-title span {
+      color: var(--accent-orange);
+    }
+    .footer-brand-desc {
+      font-size: 0.9375rem;
+      line-height: 1.65;
+      color: #9EA5B4;
+      max-width: 420px;
+      margin-bottom: 24px;
+    }
+    .footer-col-title {
+      font-size: 0.875rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #9EA5B4;
+      margin-bottom: 20px;
+    }
+    .footer-link-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .footer-link-list a {
+      font-size: 0.9375rem;
+      color: #D3D8E2;
+      transition: color 0.15s ease;
+    }
+    .footer-link-list a:hover {
+      color: var(--accent-yellow);
+    }
+    .footer-contact-block {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      font-size: 0.9375rem;
+      color: #D3D8E2;
+    }
+    .footer-contact-block b {
+      color: #FFFFFF;
+    }
+
+    .footer-bottom-bar {
+      border-top: 1px solid #23272F;
+      padding-top: 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 0.8125rem;
+      color: #7D8494;
+    }
+    .footer-bottom-bar a {
+      color: #7D8494;
+    }
+    .footer-bottom-bar a:hover {
+      color: #FFFFFF;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- CLEAN MAIN NAVBAR -->
+  <header class="navbar">
+    <div class="container-wide navbar-inner">
+      <div class="brand-wrap">
+        <a href="#hero" class="brand-logo" aria-label="BaCKY Home">
+          BaCKY<span>.</span>
+        </a>
+        <span class="brand-tag">Licensed Electrical Contractor</span>
+      </div>
+
+      <nav aria-label="Primary Navigation">
+        <ul class="nav-menu">
+          <li class="nav-item"><a href="#hero" class="active">Home</a></li>
+          <li class="nav-item"><a href="#services">Services</a></li>
+          <li class="nav-item"><a href="#crew">The Crew</a></li>
+          <li class="nav-item"><a href="#standards">Standards</a></li>
+          <li class="nav-item"><a href="#estimator">Cost Estimator</a></li>
+          <li class="nav-item"><a href="#reviews">Reviews</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-cta-wrap">
+        <a href="#estimator" class="btn-quote">
+          Get a Quote →
+        </a>
+        <button type="button" class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation">
+          Menu
+        </button>
+      </div>
+
+      <!-- Mobile dropdown drawer -->
+      <div class="mobile-drawer" id="mobileDrawer">
+        <a href="#hero" class="mobile-nav-link">Home</a>
+        <a href="#services" class="mobile-nav-link">Services</a>
+        <a href="#crew" class="mobile-nav-link">The Crew</a>
+        <a href="#standards" class="mobile-nav-link">Standards</a>
+        <a href="#estimator" class="mobile-nav-link">Cost Estimator</a>
+        <a href="#reviews" class="mobile-nav-link">Reviews</a>
+        <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 8px;">
+          <div><b>TEL:</b> <a href="tel:+2348034567890" style="border: none; padding: 0;">+234 803 456 7890</a></div>
+          <div><b>EMAIL:</b> engineering@backy-electrical.ng</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       SECTION 01: HERO SECTION (VOLTIX SPLIT CLEAN STYLE)
+       Focal visual: 02_Hero_Banner_Commercial_Building.jpg
+       ======================================================================== -->
+  <section class="hero-section" id="hero">
+    <div class="container">
+      
+      <!-- Top Title and Meta Row -->
+      <div class="hero-top-row">
+        <div>
+          <h1 class="hero-headline">
+            <span>Trusted Power.</span>
+            <span>Certified People.</span>
+          </h1>
+        </div>
+        <div class="hero-top-meta">
+          <p class="hero-lead-text">
+            Commercial and residential electrical contractors licensed across Ekiti State. Delivering zero-casualty power installations, panel setups, and grid solutions.
+          </p>
+          <div class="hero-actions">
+            <a href="#services" class="btn-pill-action">
+              Explore our Services →
+            </a>
+            <a href="#estimator" class="btn-pill-secondary">
+              Project Cost Estimator
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Main Visual Card (02_Hero_Banner_Commercial_Building.jpg) -->
+      <div class="hero-visual-card">
+        <div class="hero-main-img-box">
+          <img 
+            src="02_Hero_Banner_Commercial_Building.jpg" 
+            alt="Commercial Building Complex Electrified by BaCKY in Ado-Ekiti" 
+            class="hero-main-img"
+          />
+          <!-- 15+ Yrs Floating Badge (Direct match to reference design) -->
+          <div class="hero-float-badge">
+            <div class="float-num">15+ Yrs</div>
+            <div class="float-label">Serving Ekiti State</div>
+            <div class="float-pill">● NEMSA Certified</div>
+          </div>
+        </div>
+
+        <div class="hero-card-details">
+          <div>
+            <div class="hero-badge-tag">LICENSED CONTRACTORS // ADO-EKITI</div>
+            <h2 class="hero-card-title">Commercial & Industrial Facility Electrification</h2>
+            <p class="hero-card-body">
+              From shopping complexes and bank branches along Adebayo Road to public infrastructure and residential estates in GRA, BaCKY executes every project to rigid COREN standards.
+            </p>
+            <div class="hero-feature-pills">
+              <div class="feature-pill-item">
+                <span class="feature-pill-dot"></span>
+                <span>415V 3-Phase Main Distribution & Balancing</span>
+              </div>
+              <div class="feature-pill-item">
+                <span class="feature-pill-dot"></span>
+                <span>100% Pure Virgin Copper Wire Specifications</span>
+              </div>
+              <div class="feature-pill-item">
+                <span class="feature-pill-dot"></span>
+                <span>Statutory BEDC Clearance & Transformer Tie-in</span>
+              </div>
+            </div>
+          </div>
+
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-light); padding-top: 20px;">
+            <div style="font-size: 0.8125rem; color: var(--text-muted);">
+              REG NO: <b>EK/ELC/2026/094</b>
+            </div>
+            <a href="#estimator" style="font-size: 0.875rem; font-weight: 700; color: var(--accent-orange);">
+              Calculate Project Scope →
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       SECTION 02: VALUE PROPOSITION ("ELECTRICIANS FIRST. SALESPEOPLE NEVER.")
+       The Crew Focal: 09_BaCKY_Electrical_Team_Back_View.jpg
+       ======================================================================== -->
+  <section class="value-section" id="crew">
+    <div class="container">
+      <div class="value-grid">
+        
+        <div class="value-left-col">
+          <div class="value-tag">OUR FIELD CULTURE</div>
+          <h2 class="value-heading">
+            Electricians first.<br>
+            Salespeople never.
+          </h2>
+          <p class="value-text">
+            BaCKY started with one master engineer and a simple rule: explain the job in plain language, price it honestly, and leave the panel labeled cleaner than we found it. Over 15 years later, that rule still runs this company.
+          </p>
+
+          <div class="metrics-row">
+            <div class="metric-card">
+              <div class="metric-num">4.9/5</div>
+              <div class="metric-title">Client Satisfaction</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-num">100%</div>
+              <div class="metric-title">NEMSA Pass Rate</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-num">13+</div>
+              <div class="metric-title">Field Crew Members</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- The Crew Photograph Card -->
+        <div class="crew-feature-card">
+          <div class="crew-img-wrap">
+            <img 
+              src="09_BaCKY_Electrical_Team_Back_View.jpg" 
+              alt="The BaCKY Electrical Team and Lead Engineer in Ado-Ekiti" 
+            />
+          </div>
+          <div class="crew-card-body">
+            <div class="crew-role-label">LEADERSHIP & CREW ROSTER</div>
+            <h3 class="crew-title">1 Lead Engineer & 12 Certified Technicians</h3>
+            <p class="crew-desc">
+              Every installer on your property is a trained, PPE-equipped professional holding verified Nigerian electrical trade certifications. No subcontracted shortcuts.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       SECTION 03: COMPLETE ELECTRICAL SOLUTIONS (4 CORE DISCIPLINES)
+       06_Industrial_Distribution_Panel_Lead_Engineer.jpg
+       08_Service_Pole_Young_Electrician.jpg
+       04_Solar_Panel_Installation.jpg
+       05_Smart_Home_Lighting.jpg
+       ======================================================================== -->
+  <section class="services-section" id="services">
+    <div class="container">
+      
+      <div class="section-head">
+        <div class="section-eyebrow">SERVICES // CERTIFIED CAPABILITIES</div>
+        <h2 class="section-title">Complete electrical<br>solutions</h2>
+      </div>
+
+      <div class="services-grid">
+        
+        <!-- Card 1: 06_Industrial_Distribution_Panel_Lead_Engineer.jpg -->
+        <div class="service-card-item">
+          <div class="service-media">
+            <img 
+              src="06_Industrial_Distribution_Panel_Lead_Engineer.jpg" 
+              alt="Lead Engineer with Industrial Distribution Panel" 
+            />
+            <span class="service-pill-tag">415V 3-Phase</span>
+          </div>
+          <div class="service-content">
+            <div>
+              <div class="service-index">01 / PANEL UPGRADES</div>
+              <h3 class="service-item-title">Industrial Distribution Panels</h3>
+              <p class="service-item-text">
+                Heavy-duty switchboards, busbar fabrication, surge arresters, and motor control centers for commercial facilities.
+              </p>
+            </div>
+            <a href="#estimator" class="service-link-btn">
+              Configure panel →
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 2: 08_Service_Pole_Young_Electrician.jpg -->
+        <div class="service-card-item">
+          <div class="service-media">
+            <img 
+              src="08_Service_Pole_Young_Electrician.jpg" 
+              alt="Electrician Working on Service Pole Infrastructure" 
+            />
+            <span class="service-pill-tag">Utility Grid</span>
+          </div>
+          <div class="service-content">
+            <div>
+              <div class="service-index">02 / OVERHEAD POWER</div>
+              <h3 class="service-item-title">Overhead Service Lines & Poles</h3>
+              <p class="service-item-text">
+                Prestressed concrete and tubular pole planting, high-tension lines, and certified BEDC transformer drops.
+              </p>
+            </div>
+            <a href="#estimator" class="service-link-btn">
+              Estimate pole drop →
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 3: 04_Solar_Panel_Installation.jpg -->
+        <div class="service-card-item">
+          <div class="service-media">
+            <img 
+              src="04_Solar_Panel_Installation.jpg" 
+              alt="Commercial Solar Panel Installation" 
+            />
+            <span class="service-pill-tag">Clean Power</span>
+          </div>
+          <div class="service-content">
+            <div>
+              <div class="service-index">03 / SOLAR SYSTEMS</div>
+              <h3 class="service-item-title">Hybrid Solar & Inverters</h3>
+              <p class="service-item-text">
+                Tier-1 monocrystalline panels, Grade-A LiFePO4 batteries, and zero-millisecond automatic transfer switching.
+              </p>
+            </div>
+            <a href="#estimator" class="service-link-btn">
+              Size your solar array →
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 4: 05_Smart_Home_Lighting.jpg -->
+        <div class="service-card-item">
+          <div class="service-media">
+            <img 
+              src="05_Smart_Home_Lighting.jpg" 
+              alt="Smart Home Lighting Installation" 
+            />
+            <span class="service-pill-tag">Residential</span>
+          </div>
+          <div class="service-content">
+            <div>
+              <div class="service-index">04 / CONDUIT & SMART HOME</div>
+              <h3 class="service-item-title">Concealed Wiring & Automation</h3>
+              <p class="service-item-text">
+                Architectural conduit piping, pure virgin copper cabling, smart lighting controls, and dedicated RCBO protection.
+              </p>
+            </div>
+            <a href="#estimator" class="service-link-btn">
+              Explore residential →
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       SECTION 04: "FOUR THINGS EVERY CLIENT GETS, NO EXCEPTIONS"
+       (Voltix Clean Stacked Pills Reference)
+       ======================================================================== -->
+  <section class="promises-section" id="standards">
+    <div class="container">
+      <div class="promises-grid">
+        
+        <div class="promises-left-content">
+          <div class="promises-tag">OUR GUARANTEE</div>
+          <h2 class="promises-headline">
+            Four things every client gets, no exceptions.
+          </h2>
+          <p class="promises-body">
+            Whether you are wiring a single bungalow in Basiri or energizing a four-story commercial complex on Bank Road, our operational standard never shifts.
+          </p>
+        </div>
+
+        <div class="promise-cards-stack">
+          
+          <div class="promise-pill-card">
+            <span class="promise-badge-pill">Safety First</span>
+            <div class="promise-info">
+              <h3 class="promise-title">100% NEMSA & COREN Compliance</h3>
+              <p class="promise-text">Every installation undergoes certified insulation resistance (Megger) and grounding verification below 2 Ohms before energization.</p>
+            </div>
+          </div>
+
+          <div class="promise-pill-card">
+            <span class="promise-badge-pill orange">Skilled Experts</span>
+            <div class="promise-info">
+              <h3 class="promise-title">Fully Licensed Field Electricians</h3>
+              <p class="promise-text">Direct supervision by a registered Nigerian electrical engineer. Zero untrained laborers operating on live lines.</p>
+            </div>
+          </div>
+
+          <div class="promise-pill-card">
+            <span class="promise-badge-pill">24/7 Support</span>
+            <div class="promise-info">
+              <h3 class="promise-title">Prompt Emergency Dispatch in Ado-Ekiti</h3>
+              <p class="promise-text">Rapid field response across Adebayo, GRA, Basiri, Ajilosun, and the ABUAD corridor for critical grid faults.</p>
+            </div>
+          </div>
+
+          <div class="promise-pill-card">
+            <span class="promise-badge-pill orange">Transparent Pricing</span>
+            <div class="promise-info">
+              <h3 class="promise-title">Zero Hidden Material Markups</h3>
+              <p class="promise-text">Detailed itemized Bills of Engineering Measurement and Evaluation (BEME) with honest market copper rates.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       SECTION 05: INTERACTIVE PROJECT ESTIMATOR (CLEAN VOLTIX CALCULATOR)
+       ======================================================================== -->
+  <section class="estimator-section" id="estimator">
+    <div class="container">
+      
+      <div class="section-head">
+        <div class="section-eyebrow">ESTIMATOR // FIELD SCOPE</div>
+        <h2 class="section-title">Calculate your project<br>budget in real-time</h2>
+      </div>
+
+      <div class="estimator-card">
+        
+        <!-- Left Options Pane -->
+        <div class="estimator-left-pane">
+          
+          <div class="calc-step-label">
+            <span>STEP 01: SELECT DISCIPLINE</span>
+            <span id="calcCatTag" style="color: var(--accent-orange); font-weight: 700;">CONDUIT WIRING</span>
+          </div>
+          <div class="calc-options-grid" id="optDisciplines">
+            <div class="calc-option-btn active" data-base="1450000" data-name="Full Conduit Wiring">
+              <div class="opt-title">Conduit Wiring</div>
+              <div class="opt-desc">Concealed PVC, copper wiring, switches & boards.</div>
+            </div>
+            <div class="calc-option-btn" data-base="2800000" data-name="3-Phase Distribution Panel">
+              <div class="opt-title">3-Phase Distribution</div>
+              <div class="opt-desc">Main distribution board, busbars & breakers.</div>
+            </div>
+            <div class="calc-option-btn" data-base="3900000" data-name="Hybrid Solar & Inverter">
+              <div class="opt-title">Hybrid Solar System</div>
+              <div class="opt-desc">Monocrystalline panels, LiFePO4 battery & ATS.</div>
+            </div>
+            <div class="calc-option-btn" data-base="1850000" data-name="Service Pole Drop">
+              <div class="opt-title">Service Pole Drop</div>
+              <div class="opt-desc">Concrete pole planting & utility line drop.</div>
+            </div>
+          </div>
+
+          <div class="calc-step-label">
+            <span>STEP 02: ADO-EKITI DISTRICT</span>
+            <span style="color: var(--text-muted);">LOCAL RATE FACTOR</span>
+          </div>
+          <div class="calc-options-grid" id="optLocations">
+            <div class="calc-option-btn active" data-factor="1.0" data-loc="Ado-Ekiti GRA">
+              <div class="opt-title">GRA / Secretariat</div>
+              <div class="opt-desc">Residential & civil zone</div>
+            </div>
+            <div class="calc-option-btn" data-factor="1.05" data-loc="Adebayo / Bank Rd">
+              <div class="opt-title">Adebayo / Bank Rd</div>
+              <div class="opt-desc">Commercial corridor</div>
+            </div>
+            <div class="calc-option-btn" data-factor="1.02" data-loc="Ajilosun / Ikere Rd">
+              <div class="opt-title">Ajilosun Corridor</div>
+              <div class="opt-desc">Trade & industrial axis</div>
+            </div>
+            <div class="calc-option-btn" data-factor="1.08" data-loc="Iworoko / EKSU Axis">
+              <div class="opt-title">Iworoko / EKSU</div>
+              <div class="opt-desc">Institutional belt</div>
+            </div>
+          </div>
+
+          <div class="calc-step-label">
+            <span>STEP 03: CAPACITY / CONNECTED LOAD</span>
+            <span id="loadClassLabel" style="color: var(--text-main); font-weight: 700;">15 kVA</span>
+          </div>
+          <div class="slider-box">
+            <div class="slider-header">
+              <span style="font-size: 0.875rem; font-weight: 600; color: var(--text-body);">System Scale:</span>
+              <span class="slider-val-tag" id="sliderValDisplay">15 kVA</span>
+            </div>
+            <input type="range" id="loadSlider" min="5" max="150" step="5" value="15">
+            <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--text-muted); margin-top: 8px;">
+              <span>5 kVA (Bungalow)</span>
+              <span>30 kVA (Duplex)</span>
+              <span>75 kVA (Commercial)</span>
+              <span>150 kVA (Industrial)</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Summary Pane -->
+        <div class="estimator-right-pane">
+          <div>
+            <div class="summary-box">
+              <div class="sum-label">ESTIMATED BUDGET RANGE (NGN ₦)</div>
+              <div class="sum-amount" id="sumAmountDisplay">₦ 2,125,000</div>
+              <div class="sum-note">*Includes statutory testing, labor & certified Nigerian copper</div>
+            </div>
+
+            <div style="margin-bottom: 24px;">
+              <div class="breakdown-row">
+                <span>Discipline:</span>
+                <b id="sumDiscipline">Full Conduit Wiring</b>
+              </div>
+              <div class="breakdown-row">
+                <span>Location:</span>
+                <b id="sumLocation">Ado-Ekiti GRA</b>
+              </div>
+              <div class="breakdown-row">
+                <span>Connected Load:</span>
+                <b id="sumLoad">15 kVA (3-Phase Ready)</b>
+              </div>
+              <div class="breakdown-row">
+                <span>Estimated Crew:</span>
+                <b id="sumCrew">1 Lead Engineer + 4 Technicians</b>
+              </div>
+              <div class="breakdown-row">
+                <span>Timeframe:</span>
+                <b id="sumTimeframe">7 – 14 Working Days</b>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <a href="tel:+2348034567890" class="btn-quote" style="width: 100%; justify-content: center; padding: 16px;">
+              Call to Book Inspection: +234 803 456 7890
+            </a>
+            <p style="font-size: 0.75rem; color: var(--text-muted); text-align: center; margin-top: 10px;">
+              Direct line to our Ado-Ekiti engineering dispatch desk.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       SECTION 06: TRUSTED CLIENT REVIEWS (VOLTIX STYLE)
+       ======================================================================== -->
+  <section class="reviews-section" id="reviews">
+    <div class="container">
+      
+      <div class="section-head">
+        <div class="section-eyebrow">TESTIMONIALS // LOCAL TRUST</div>
+        <h2 class="section-title">Trusted by property owners<br>in their toughest moments</h2>
+      </div>
+
+      <div class="reviews-grid">
+        
+        <div class="review-card">
+          <div>
+            <div class="review-stars">★★★★★</div>
+            <p class="review-quote">
+              "Panel was sparking at 9pm on a Saturday. BaCKY’s lead engineer arrived within 30 minutes, isolated the burnt breaker, and returned Monday to upgrade the whole distribution board."
+            </p>
+          </div>
+          <div class="reviewer-meta">
+            <div class="reviewer-avatar-placeholder">O.A</div>
+            <div>
+              <div class="reviewer-name">Engr. Oladipo Adeleke</div>
+              <div class="reviewer-loc">Adebayo Commercial Axis, Ado-Ekiti</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div>
+            <div class="review-stars">★★★★★</div>
+            <p class="review-quote">
+              "They re-wired our two-story medical facility in GRA after a low-voltage surge destroyed sensitive diagnostics. Done in 8 days, cleanly labeled, and passed NEMSA inspection on the first pass."
+            </p>
+          </div>
+          <div class="reviewer-meta">
+            <div class="reviewer-avatar-placeholder">F.B</div>
+            <div>
+              <div class="reviewer-name">Dr. Folake Bamigboye</div>
+              <div class="reviewer-loc">GRA Residential Area, Ado-Ekiti</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div>
+            <div class="review-stars">★★★★★</div>
+            <p class="review-quote">
+              "Installed a 20kVA hybrid solar system with automated ATS. Zero power interruption even during long BEDC grid blackouts in Basiri. Completely transparent pricing."
+            </p>
+          </div>
+          <div class="reviewer-meta">
+            <div class="reviewer-avatar-placeholder">T.O</div>
+            <div>
+              <div class="reviewer-name">Chief Tunde Ojo</div>
+              <div class="reviewer-loc">Basiri / Nova Road, Ado-Ekiti</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       FOOTER
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand-title">BaCKY<span>.</span></div>
+          <p class="footer-brand-desc">
+            Licensed Electrical Contractor headquartered in Ado-Ekiti, Ekiti State, Nigeria. Certified high-voltage wiring, solar systems, industrial panel design, and statutory utility grid tie-in.
+          </p>
+          <div style="font-size: 0.8125rem; color: #8C94A4;">
+            NEMSA REG: <b>EK/ELC/2026/094</b> • COREN REGISTERED
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Services</div>
+          <ul class="footer-link-list">
+            <li><a href="#services">Industrial Distribution Panels</a></li>
+            <li><a href="#services">Overhead Service Lines & Poles</a></li>
+            <li><a href="#services">Hybrid Solar & Inverter Systems</a></li>
+            <li><a href="#services">Concealed Conduit Wiring</a></li>
+            <li><a href="#standards">NEMSA Testing & Certification</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Central Office</div>
+          <div class="footer-contact-block">
+            <div>
+              <b>Address:</b><br>
+              Adebayo Commercial Corridor, Ado-Ekiti, Ekiti State, Nigeria
+            </div>
+            <div>
+              <b>Telephone:</b><br>
+              <a href="tel:+2348034567890" style="color: #FFFFFF;">+234 803 456 7890</a> / <a href="tel:+2348123456789" style="color: #FFFFFF;">+234 812 345 6789</a>
+            </div>
+            <div>
+              <b>Direct Email:</b><br>
+              <a href="mailto:engineering@backy-electrical.ng" style="color: var(--accent-yellow);">engineering@backy-electrical.ng</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <div>
+          © 2026 BaCKY Licensed Electrical Contractor. All rights reserved.
+        </div>
+        <div style="display: flex; gap: 20px;">
+          <a href="#hero">Back to Top ↑</a>
+          <a href="#standards">Compliance</a>
+          <a href="#estimator">Cost Calculator</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       INTERACTIVE ESTIMATOR SCRIPT & MOBILE MENU
+       ======================================================================== -->
+  <script>
+    // Mobile Drawer Toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileDrawer = document.getElementById('mobileDrawer');
+    if (mobileMenuBtn && mobileDrawer) {
+      mobileMenuBtn.addEventListener('click', () => {
+        const isOpen = mobileDrawer.classList.toggle('open');
+        mobileMenuBtn.textContent = isOpen ? 'Close' : 'Menu';
+      });
+
+      document.querySelectorAll('.mobile-nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileDrawer.classList.remove('open');
+          mobileMenuBtn.textContent = 'Menu';
+        });
+      });
+    }
+
+    // Cost Estimator Logic
+    const disciplineBtns = document.querySelectorAll('#optDisciplines .calc-option-btn');
+    const locationBtns = document.querySelectorAll('#optLocations .calc-option-btn');
+    const loadSlider = document.getElementById('loadSlider');
+    const sliderValDisplay = document.getElementById('sliderValDisplay');
+    const sumAmountDisplay = document.getElementById('sumAmountDisplay');
+    const calcCatTag = document.getElementById('calcCatTag');
+
+    const sumDiscipline = document.getElementById('sumDiscipline');
+    const sumLocation = document.getElementById('sumLocation');
+    const sumLoad = document.getElementById('sumLoad');
+    const sumCrew = document.getElementById('sumCrew');
+    const sumTimeframe = document.getElementById('sumTimeframe');
+
+    let currentBase = 1450000;
+    let currentDisciplineName = "Full Conduit Wiring";
+    let currentLocationFactor = 1.0;
+    let currentLocationName = "Ado-Ekiti GRA";
+    let currentLoad = 15;
+
+    function recalculate() {
+      let kvaRate = 45000;
+      if (currentDisciplineName.includes('Solar')) {
+        kvaRate = 185000;
+      } else if (currentDisciplineName.includes('Panel')) {
+        kvaRate = 55000;
+      } else if (currentDisciplineName.includes('Pole')) {
+        kvaRate = 35000;
+      }
+
+      const total = Math.round((currentBase + (currentLoad * kvaRate)) * currentLocationFactor);
+
+      sumAmountDisplay.textContent = '₦ ' + total.toLocaleString('en-US');
+      sliderValDisplay.textContent = currentLoad + ' kVA';
+      if (loadClassLabel) {
+        loadClassLabel.textContent = currentLoad + ' kVA';
+      }
+      sumDiscipline.textContent = currentDisciplineName;
+      sumLocation.textContent = currentLocationName;
+      sumLoad.textContent = currentLoad + ' kVA (' + (currentLoad > 40 ? '3-Phase Heavy' : 'Single/3-Phase') + ')';
+
+      if (currentLoad <= 15) {
+        sumCrew.textContent = "1 Lead Engineer + 4 Technicians";
+        sumTimeframe.textContent = "5 – 10 Working Days";
+      } else if (currentLoad <= 45) {
+        sumCrew.textContent = "1 Lead Engineer + 7 Technicians";
+        sumTimeframe.textContent = "10 – 18 Working Days";
+      } else {
+        sumCrew.textContent = "Full BaCKY 13-Person Deployment";
+        sumTimeframe.textContent = "21 – 35 Working Days";
+      }
+    }
+
+    disciplineBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        disciplineBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentBase = parseFloat(btn.dataset.base);
+        currentDisciplineName = btn.dataset.name;
+        calcCatTag.textContent = currentDisciplineName.toUpperCase();
+        recalculate();
+      });
+    });
+
+    locationBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        locationBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentLocationFactor = parseFloat(btn.dataset.factor);
+        currentLocationName = btn.dataset.loc;
+        recalculate();
+      });
+    });
+
+    loadSlider.addEventListener('input', (e) => {
+      currentLoad = parseInt(e.target.value);
+      recalculate();
+    });
+
+    // Initial run
+    recalculate();
+  </script>
+</body>
+</html>

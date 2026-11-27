@@ -988,189 +988,6 @@
     }
 
     /* ==========================================================================
-       SECTION 05: INTERACTIVE PROJECT ESTIMATOR (CLEAN VOLTIX CALCULATOR)
-       ========================================================================== */
-    .estimator-section {
-      padding: 96px 0;
-      background-color: var(--bg-page);
-    }
-    .estimator-card {
-      background-color: #FFFFFF;
-      border: 1px solid var(--border-light);
-      border-radius: var(--radius-xl);
-      box-shadow: var(--shadow-card);
-      overflow: hidden;
-      display: grid;
-      grid-template-columns: 1fr;
-      width: 100%;
-      box-sizing: border-box;
-    }
-    @media (min-width: 992px) {
-      .estimator-card {
-        grid-template-columns: 1.25fr 0.85fr;
-      }
-    }
-    .estimator-left-pane {
-      padding: clamp(20px, 4vw, 48px);
-      width: 100%;
-      box-sizing: border-box;
-      min-width: 0;
-    }
-    .estimator-right-pane {
-      background-color: #F8F7F3;
-      border-top: 1px solid var(--border-light);
-      padding: clamp(20px, 4vw, 48px);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      width: 100%;
-      box-sizing: border-box;
-      min-width: 0;
-    }
-    @media (min-width: 992px) {
-      .estimator-right-pane {
-        border-top: none;
-        border-left: 1px solid var(--border-light);
-      }
-    }
-
-    .calc-step-label {
-      font-size: 0.8125rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--text-muted);
-      margin-bottom: 12px;
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 6px;
-    }
-    .calc-options-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 12px;
-      margin-bottom: 32px;
-      width: 100%;
-      box-sizing: border-box;
-    }
-    @media (max-width: 600px) {
-      .calc-options-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-    .calc-option-btn {
-      background-color: #FFFFFF;
-      border: 1px solid var(--border-light);
-      border-radius: var(--radius-md);
-      padding: 16px;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      text-align: left;
-      width: 100%;
-      box-sizing: border-box;
-    }
-    .calc-option-btn:hover {
-      border-color: #B8B3A4;
-    }
-    .calc-option-btn.active {
-      border-color: #111317;
-      background-color: #111317;
-      color: #FFFFFF;
-    }
-    .calc-option-btn.active .opt-desc {
-      color: #B5B9C2;
-    }
-    .opt-title {
-      font-size: 0.9375rem;
-      font-weight: 700;
-      margin-bottom: 4px;
-    }
-    .opt-desc {
-      font-size: 0.78rem;
-      color: var(--text-muted);
-      line-height: 1.4;
-    }
-
-    /* Range slider */
-    .slider-box {
-      background-color: #FFFFFF;
-      border: 1px solid var(--border-light);
-      border-radius: var(--radius-md);
-      padding: 20px;
-    }
-    .slider-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 14px;
-    }
-    .slider-val-tag {
-      font-size: 1.25rem;
-      font-weight: 800;
-      color: var(--text-main);
-    }
-    input[type=range] {
-      width: 100%;
-      height: 6px;
-      border-radius: 4px;
-      background: #E5E3DC;
-      outline: none;
-      -webkit-appearance: none;
-    }
-    input[type=range]::-webkit-slider-thumb {
-      -webkit-appearance: none;
-      width: 22px;
-      height: 22px;
-      border-radius: 50%;
-      background: var(--text-main);
-      cursor: pointer;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-    }
-
-    /* Right Summary Card */
-    .summary-box {
-      background-color: #FFFFFF;
-      border: 1px solid var(--border-light);
-      border-radius: var(--radius-lg);
-      padding: 24px;
-      margin-bottom: 24px;
-    }
-    .sum-label {
-      font-size: 0.75rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--text-muted);
-      margin-bottom: 8px;
-    }
-    .sum-amount {
-      font-size: clamp(2.2rem, 3.5vw, 3rem);
-      font-weight: 800;
-      color: var(--text-main);
-      line-height: 1;
-      margin-bottom: 10px;
-    }
-    .sum-note {
-      font-size: 0.78rem;
-      color: var(--text-muted);
-    }
-    .breakdown-row {
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.8125rem;
-      padding: 8px 0;
-      border-bottom: 1px solid var(--border-light);
-      color: var(--text-body);
-    }
-    .breakdown-row:last-child {
-      border-bottom: none;
-    }
-    .breakdown-row b {
-      color: var(--text-main);
-    }
-
-    /* ==========================================================================
        SECTION 06: TRUSTED CLIENT REVIEWS (DRIBBBLE TESTIMONIAL CARDS)
        ========================================================================== */
     .reviews-section {
@@ -1394,13 +1211,13 @@
           <li class="nav-item"><a href="#services">Services</a></li>
           <li class="nav-item"><a href="#crew">Founder & Crew</a></li>
           <li class="nav-item"><a href="#standards">Standards</a></li>
-          <li class="nav-item"><a href="#estimator">Cost Estimator</a></li>
+          <li class="nav-item"><a href="#reviews">Reviews</a></li>
           <li class="nav-item"><a href="#faq">FAQ</a></li>
         </ul>
       </nav>
 
       <div class="nav-cta-wrap">
-        <a href="#estimator" class="btn-quote">
+        <a href="https://wa.me/2348033733006?text=Hello%20Engr%20Ogunleye%20Segun%2C%20I%20would%20like%20to%20request%20a%20quote%20for%20an%20electrical%20project%20in%20Ekiti." target="_blank" class="btn-quote">
           Get a Quote →
         </a>
         <button type="button" class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation">
@@ -1414,7 +1231,6 @@
         <a href="#services" class="mobile-nav-link">Services</a>
         <a href="#crew" class="mobile-nav-link">Founder & Crew</a>
         <a href="#standards" class="mobile-nav-link">Standards</a>
-        <a href="#estimator" class="mobile-nav-link">Cost Estimator</a>
         <a href="#reviews" class="mobile-nav-link">Reviews</a>
         <a href="#faq" class="mobile-nav-link">FAQ</a>
         <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 8px;">
@@ -1450,8 +1266,8 @@
             <a href="#services" class="btn-pill-action">
               Explore our Services →
             </a>
-            <a href="#estimator" class="btn-pill-secondary">
-              Project Cost Estimator
+            <a href="https://wa.me/2348033733006?text=Hello%20Engr%20Ogunleye%20Segun%2C%20I%20would%20like%20to%20consult%20on%20an%20electrical%20project%20in%20Ekiti." target="_blank" class="btn-pill-secondary">
+              Direct WhatsApp Chat →
             </a>
           </div>
         </div>
@@ -1500,8 +1316,8 @@
             <div style="font-size: 0.8125rem; color: var(--text-muted);">
               LOCATION: <b>ADO-EKITI, EKITI STATE</b>
             </div>
-            <a href="#estimator" style="font-size: 0.875rem; font-weight: 700; color: var(--accent-orange);">
-              Calculate Project Scope →
+            <a href="tel:08033733006" style="font-size: 0.875rem; font-weight: 700; color: var(--accent-orange);">
+              Call: 08033733006 →
             </a>
           </div>
         </div>
@@ -1599,8 +1415,8 @@
                 Heavy-duty switchboards, busbar fabrication, surge arresters, and motor control centers for commercial facilities.
               </p>
             </div>
-            <a href="#estimator" class="service-link-btn">
-              Configure panel →
+            <a href="https://wa.me/2348033733006?text=Hello%20Engr%20Ogunleye%2C%20I%20am%20inquiring%20about%20Industrial%20Distribution%20Panels." target="_blank" class="service-link-btn">
+              Inquire panel →
             </a>
           </div>
         </div>
@@ -1622,8 +1438,8 @@
                 Prestressed concrete and tubular pole planting, high-tension lines, and certified BEDC transformer drops.
               </p>
             </div>
-            <a href="#estimator" class="service-link-btn">
-              Estimate pole drop →
+            <a href="https://wa.me/2348033733006?text=Hello%20Engr%20Ogunleye%2C%20I%20am%20inquiring%20about%20Overhead%20Service%20Lines%20and%20Poles." target="_blank" class="service-link-btn">
+              Inquire pole drop →
             </a>
           </div>
         </div>
@@ -1645,8 +1461,8 @@
                 Tier-1 monocrystalline panels, Grade-A LiFePO4 batteries, and zero-millisecond automatic transfer switching.
               </p>
             </div>
-            <a href="#estimator" class="service-link-btn">
-              Size your solar array →
+            <a href="https://wa.me/2348033733006?text=Hello%20Engr%20Ogunleye%2C%20I%20am%20inquiring%20about%20Hybrid%20Solar%20and%20Inverter%20Systems." target="_blank" class="service-link-btn">
+              Inquire solar array →
             </a>
           </div>
         </div>
@@ -1668,8 +1484,8 @@
                 Architectural conduit piping, pure virgin copper cabling, smart lighting controls, and dedicated RCBO protection.
               </p>
             </div>
-            <a href="#estimator" class="service-link-btn">
-              Explore residential →
+            <a href="https://wa.me/2348033733006?text=Hello%20Engr%20Ogunleye%2C%20I%20am%20inquiring%20about%20Concealed%20Conduit%20Wiring." target="_blank" class="service-link-btn">
+              Inquire residential wiring →
             </a>
           </div>
         </div>
@@ -1738,146 +1554,7 @@
   </section>
 
   <!-- ========================================================================
-       SECTION 05: INTERACTIVE PROJECT ESTIMATOR (CLEAN VOLTIX CALCULATOR)
-       ======================================================================== -->
-  <section class="estimator-section" id="estimator">
-    <div class="container">
-      
-      <div class="section-head">
-        <div class="section-eyebrow">ESTIMATOR // FIELD SCOPE</div>
-        <h2 class="section-title">Calculate your project<br>budget in real-time</h2>
-      </div>
-
-      <div class="estimator-card">
-        
-        <!-- Left Options Pane -->
-        <div class="estimator-left-pane">
-          
-          <div class="calc-step-label">
-            <span>STEP 01: SELECT DISCIPLINE</span>
-            <span id="calcCatTag" style="color: var(--accent-orange); font-weight: 700;">CONDUIT WIRING</span>
-          </div>
-          <div class="calc-options-grid" id="optDisciplines">
-            <div class="calc-option-btn active" data-base="1450000" data-name="Full Conduit Wiring">
-              <div class="opt-title">Conduit Wiring</div>
-              <div class="opt-desc">Concealed PVC, copper wiring, switches & boards.</div>
-            </div>
-            <div class="calc-option-btn" data-base="2800000" data-name="3-Phase Distribution Panel">
-              <div class="opt-title">3-Phase Distribution</div>
-              <div class="opt-desc">Main distribution board, busbars & breakers.</div>
-            </div>
-            <div class="calc-option-btn" data-base="3900000" data-name="Hybrid Solar & Inverter">
-              <div class="opt-title">Hybrid Solar System</div>
-              <div class="opt-desc">Monocrystalline panels, LiFePO4 battery & ATS.</div>
-            </div>
-            <div class="calc-option-btn" data-base="1850000" data-name="Service Pole Drop">
-              <div class="opt-title">Service Pole Drop</div>
-              <div class="opt-desc">Concrete pole planting & utility line drop.</div>
-            </div>
-          </div>
-
-          <div class="calc-step-label">
-            <span>STEP 02: ADO-EKITI DISTRICT</span>
-            <span style="color: var(--text-muted);">LOCAL RATE FACTOR</span>
-          </div>
-          <div class="calc-options-grid" id="optLocations">
-            <div class="calc-option-btn active" data-factor="1.0" data-loc="Ado-Ekiti GRA">
-              <div class="opt-title">GRA / Secretariat</div>
-              <div class="opt-desc">Residential & civil zone</div>
-            </div>
-            <div class="calc-option-btn" data-factor="1.05" data-loc="Adebayo / Bank Rd">
-              <div class="opt-title">Adebayo / Bank Rd</div>
-              <div class="opt-desc">Commercial corridor</div>
-            </div>
-            <div class="calc-option-btn" data-factor="1.02" data-loc="Ajilosun / Ikere Rd">
-              <div class="opt-title">Ajilosun Corridor</div>
-              <div class="opt-desc">Trade & industrial axis</div>
-            </div>
-            <div class="calc-option-btn" data-factor="1.08" data-loc="Iworoko / EKSU Axis">
-              <div class="opt-title">Iworoko / EKSU</div>
-              <div class="opt-desc">Institutional belt</div>
-            </div>
-          </div>
-
-          <div class="calc-step-label">
-            <span>STEP 03: CAPACITY / CONNECTED LOAD</span>
-            <span id="loadClassLabel" style="color: var(--text-main); font-weight: 700;">15 kVA</span>
-          </div>
-          <div class="slider-box">
-            <div class="slider-header">
-              <span style="font-size: 0.875rem; font-weight: 600; color: var(--text-body);">System Scale:</span>
-              <span class="slider-val-tag" id="sliderValDisplay">15 kVA</span>
-            </div>
-            <input type="range" id="loadSlider" min="5" max="150" step="5" value="15">
-            <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--text-muted); margin-top: 8px;">
-              <span>5 kVA (Bungalow)</span>
-              <span>30 kVA (Duplex)</span>
-              <span>75 kVA (Commercial)</span>
-              <span>150 kVA (Industrial)</span>
-            </div>
-          </div>
-
-        </div>
-
-        <!-- Right Summary Pane -->
-        <div class="estimator-right-pane">
-          <div>
-            <div class="summary-box">
-              <div class="sum-label">ESTIMATED BUDGET RANGE (NGN ₦)</div>
-              <div class="sum-amount" id="sumAmountDisplay">₦ 2,125,000</div>
-              <div class="sum-note">*Includes statutory testing, labor & certified Nigerian copper</div>
-            </div>
-
-            <div style="margin-bottom: 24px;">
-              <div class="breakdown-row">
-                <span>Discipline:</span>
-                <b id="sumDiscipline">Full Conduit Wiring</b>
-              </div>
-              <div class="breakdown-row">
-                <span>Location:</span>
-                <b id="sumLocation">Ado-Ekiti GRA</b>
-              </div>
-              <div class="breakdown-row">
-                <span>Connected Load:</span>
-                <b id="sumLoad">15 kVA (3-Phase Ready)</b>
-              </div>
-              <div class="breakdown-row">
-                <span>Estimated Crew:</span>
-                <b id="sumCrew">1 Lead Engineer + 4 Technicians</b>
-              </div>
-              <div class="breakdown-row">
-                <span>Timeframe:</span>
-                <b id="sumTimeframe">7 – 14 Working Days</b>
-              </div>
-            </div>
-          </div>
-
-          <div>
-            <a href="https://wa.me/2348033733006?text=Hello%20Engr%20Ogunleye%20Segun%2C%20I%20would%20like%20to%20book%20an%20electrical%20inspection%20for%20my%20property%20in%20Ekiti." target="_blank" class="btn-quote" style="width: 100%; justify-content: center; padding: 16px; margin-bottom: 10px;">
-              Book on WhatsApp: 08033733006 →
-            </a>
-            <div style="display: flex; gap: 8px; justify-content: center; flex-wrap: wrap;">
-              <a href="tel:08033733006" style="font-size: 0.8125rem; font-weight: 700; color: var(--text-main); text-decoration: underline;">
-                Call: 08033733006
-              </a>
-              <span style="color: var(--text-muted);">•</span>
-              <a href="tel:08065011248" style="font-size: 0.8125rem; font-weight: 700; color: var(--text-main); text-decoration: underline;">
-                Call: 08065011248
-              </a>
-            </div>
-            <p style="font-size: 0.75rem; color: var(--text-muted); text-align: center; margin-top: 10px;">
-              Direct line to founder Ogunleye Segun — No 10 Egbewa Road 3, Ilawe Road, Ado-Ekiti.
-            </p>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ========================================================================
-       SECTION 06: TRUSTED CLIENT REVIEWS (VOLTIX STYLE)
+       SECTION 05: TRUSTED CLIENT REVIEWS (VOLTIX STYLE)
        ======================================================================== -->
   <section class="reviews-section" id="reviews">
     <div class="container">
@@ -2036,7 +1713,8 @@
         <div style="display: flex; gap: 20px;">
           <a href="#hero">Back to Top ↑</a>
           <a href="#crew">Founder</a>
-          <a href="#estimator">Cost Calculator</a>
+          <a href="#reviews">Reviews</a>
+          <a href="#faq">FAQ</a>
         </div>
       </div>
 
@@ -2044,7 +1722,7 @@
   </footer>
 
   <!-- ========================================================================
-       INTERACTIVE ESTIMATOR SCRIPT & MOBILE MENU
+       MOBILE MENU SCRIPT
        ======================================================================== -->
   <script>
     // Mobile Drawer Toggle
@@ -2063,88 +1741,6 @@
         });
       });
     }
-
-    // Cost Estimator Logic
-    const disciplineBtns = document.querySelectorAll('#optDisciplines .calc-option-btn');
-    const locationBtns = document.querySelectorAll('#optLocations .calc-option-btn');
-    const loadSlider = document.getElementById('loadSlider');
-    const sliderValDisplay = document.getElementById('sliderValDisplay');
-    const sumAmountDisplay = document.getElementById('sumAmountDisplay');
-    const calcCatTag = document.getElementById('calcCatTag');
-
-    const sumDiscipline = document.getElementById('sumDiscipline');
-    const sumLocation = document.getElementById('sumLocation');
-    const sumLoad = document.getElementById('sumLoad');
-    const sumCrew = document.getElementById('sumCrew');
-    const sumTimeframe = document.getElementById('sumTimeframe');
-
-    let currentBase = 1450000;
-    let currentDisciplineName = "Full Conduit Wiring";
-    let currentLocationFactor = 1.0;
-    let currentLocationName = "Ado-Ekiti GRA";
-    let currentLoad = 15;
-
-    function recalculate() {
-      let kvaRate = 45000;
-      if (currentDisciplineName.includes('Solar')) {
-        kvaRate = 185000;
-      } else if (currentDisciplineName.includes('Panel')) {
-        kvaRate = 55000;
-      } else if (currentDisciplineName.includes('Pole')) {
-        kvaRate = 35000;
-      }
-
-      const total = Math.round((currentBase + (currentLoad * kvaRate)) * currentLocationFactor);
-
-      sumAmountDisplay.textContent = '₦ ' + total.toLocaleString('en-US');
-      sliderValDisplay.textContent = currentLoad + ' kVA';
-      if (loadClassLabel) {
-        loadClassLabel.textContent = currentLoad + ' kVA';
-      }
-      sumDiscipline.textContent = currentDisciplineName;
-      sumLocation.textContent = currentLocationName;
-      sumLoad.textContent = currentLoad + ' kVA (' + (currentLoad > 40 ? '3-Phase Heavy' : 'Single/3-Phase') + ')';
-
-      if (currentLoad <= 15) {
-        sumCrew.textContent = "1 Lead Engineer + 4 Technicians";
-        sumTimeframe.textContent = "5 – 10 Working Days";
-      } else if (currentLoad <= 45) {
-        sumCrew.textContent = "1 Lead Engineer + 7 Technicians";
-        sumTimeframe.textContent = "10 – 18 Working Days";
-      } else {
-        sumCrew.textContent = "Full BACKY 13-Person Deployment";
-        sumTimeframe.textContent = "21 – 35 Working Days";
-      }
-    }
-
-    disciplineBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        disciplineBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        currentBase = parseFloat(btn.dataset.base);
-        currentDisciplineName = btn.dataset.name;
-        calcCatTag.textContent = currentDisciplineName.toUpperCase();
-        recalculate();
-      });
-    });
-
-    locationBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        locationBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        currentLocationFactor = parseFloat(btn.dataset.factor);
-        currentLocationName = btn.dataset.loc;
-        recalculate();
-      });
-    });
-
-    loadSlider.addEventListener('input', (e) => {
-      currentLoad = parseInt(e.target.value);
-      recalculate();
-    });
-
-    // Initial run
-    recalculate();
   </script>
 </body>
 </html>
